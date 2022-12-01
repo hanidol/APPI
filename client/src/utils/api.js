@@ -5,7 +5,7 @@ import { LOGOUT } from "../actions/types";
 
 // Create an instance of axios
 const api = axios.create({
-  baseURL: "https://obscure-taiga-16596.herokuapp.com//api",
+  baseURL: "https://obscure-taiga-16596.herokuapp.com/api",
   headers: {
     "Content-Type": "application/json",
   },
