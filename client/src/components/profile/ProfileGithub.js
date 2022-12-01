@@ -1,10 +1,8 @@
-import { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import React from "react"
+import { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-
-import { getGithubRepos } from '../../actions/profile';
+import { getGithubRepos } from "../../actions/profile";
 
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   useEffect(() => {
@@ -12,16 +10,16 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   }, [getGithubRepos, username]);
 
   return (
-    <div class='profile-github'>
-      <h2 class='text-primary my-1'>
-        <i class='fab fa-github'></i> Github Repos
+    <div class="profile-github">
+      <h2 class="text-primary my-1">
+        <i class="fab fa-github"></i> Github Repos
       </h2>
 
       {repos.map((repo) => (
-        <div key={repo._id} class='repo bg-white my-1 p-1'>
+        <div key={repo._id} class="repo bg-white my-1 p-1">
           <div>
             <h4>
-              <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
                 {repo.name}
               </a>
             </h4>
@@ -31,13 +29,13 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
 
           <div>
             <ul>
-              <li class='badge badge-primary'>
+              <li class="badge badge-primary">
                 Stars: {repo.stargazers_count}
               </li>
 
-              <li class='badge badge-dark'>Watchers: {repo.watchers_count}</li>
+              <li class="badge badge-dark">Watchers: {repo.watchers_count}</li>
 
-              <li class='badge badge-light'>Forks: {repo.forks_count}</li>
+              <li class="badge badge-light">Forks: {repo.forks_count}</li>
             </ul>
           </div>
         </div>
