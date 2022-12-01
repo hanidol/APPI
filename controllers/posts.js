@@ -1,7 +1,5 @@
-const express =require ("express");
-const mongoose =require ("mongoose");
-
-const PostMessage =require ("../models/postMessage.js");
+const express = require("express");
+const mongoose = require("mongoose");
 
 const router = express.Router();
 
@@ -15,7 +13,7 @@ const getPosts = async (req, res) => {
   }
 };
 
- const getPost = async (req, res) => {
+const getPost = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -27,7 +25,7 @@ const getPosts = async (req, res) => {
   }
 };
 
- const createPost = async (req, res) => {
+const createPost = async (req, res) => {
   const { name, mail, phone, message, selectedFile, creator, tags } = req.body;
 
   const newPostMessage = new PostMessage({
@@ -49,7 +47,7 @@ const getPosts = async (req, res) => {
   }
 };
 
- const updatePost = async (req, res) => {
+const updatePost = async (req, res) => {
   const { id } = req.params;
   const { name, mail, phone, message, creator, selectedFile, tags } = req.body;
 
@@ -72,7 +70,7 @@ const getPosts = async (req, res) => {
   res.json(updatedPost);
 };
 
- const deletePost = async (req, res) => {
+const deletePost = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id))
@@ -83,7 +81,7 @@ const getPosts = async (req, res) => {
   res.json({ message: "Post deleted successfully." });
 };
 
- const likePost = async (req, res) => {
+const likePost = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id))
@@ -99,6 +97,14 @@ const getPosts = async (req, res) => {
 
   res.json(updatedPost);
 };
-module.exports= {getPosts,likePost,deletePost,updatePost,getPost,createPost,router}
- 
+module.exports = {
+  getPosts,
+  likePost,
+  deletePost,
+  updatePost,
+  getPost,
+  createPost,
+  router,
+};
+
 //export default router;
