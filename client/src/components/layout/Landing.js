@@ -1,30 +1,30 @@
-import { Link, Navigate } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import React from "react"
+import { Link, Navigate } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import React from "react";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
-    return <Navigate to='/dashboard' />;
+    return <Navigate to="/dashboard" />;
   }
 
   return (
-    <section className='landing'>
-      <div className='dark-overlay'>
-        <div className='landing-inner'>
-          <h1 className='x-large'>Patients App</h1>
+    <section className="landing">
+      <div className="dark-overlay">
+        <div className="landing-inner">
+          <h1 className="x-large">Patients App</h1>
 
-          <p className='lead'>
-            Create Doctor profile/portfolio, share posts and interact with
-            other Doctors
+          <p className="lead">
+            Create Doctor profile/portfolio, share posts and interact with other
+            Doctors
           </p>
 
-          <div className='buttons'>
-            <Link to='/register' className='btn btn-primary'>
+          <div className="buttons">
+            <Link to="/register" className="btn btn-primary">
               Sign Up
             </Link>
 
-            <Link to='/login' className='btn'>
+            <Link to="/login" className="btn">
               Login
             </Link>
           </div>
