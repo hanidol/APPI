@@ -4,9 +4,7 @@
   "description": "Doctors App",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "client-install": "npm install --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "nodemon server.js"
   },
   "author": "Hani nasri",
   "license": "ISC",
