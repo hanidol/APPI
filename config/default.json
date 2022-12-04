@@ -1,4 +1,3 @@
 {
-    "jwtSecret": "<prcess.env.jwtSecret>"
-  }
-  
+  "jwtSecret": "<process.env.jwtSecret>"
+}
