@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
-process.env["NODE_CONFIG_DIR"] = __dirname + "../../config";
+//process.env["NODE_CONFIG_DIR"] = __dirname + "../../config";
 const jwt = require("jsonwebtoken");
 const config = require("config");
+console.log(config);
 const bcrypt = require("bcryptjs");
 
 const User = require("../../models/User");
