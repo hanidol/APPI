@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
+process.env["NODE_CONFIG_DIR"] = __dirname + "../../config";
 const config = require("config");
 const bcrypt = require("bcryptjs");
 
