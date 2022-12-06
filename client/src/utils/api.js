@@ -11,7 +11,7 @@ import { LOGOUT } from "../actions/types";
 //},
 //});
 const api = axios.create({
-  baseURL: "https://doctor-alzheimer1.onrender.com/api",
+  baseURL: "https://doctor-alzheimer2.onrender.com.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },

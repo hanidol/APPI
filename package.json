@@ -4,7 +4,8 @@
   "description": "Doctors App",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "cross-env NODE_ENV=production nodemon server.js && npm client:install && npm client:build",
+    "server": "nodemon server.js"
   },
   "author": "Hani nasri",
   "license": "ISC",
