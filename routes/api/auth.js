@@ -4,8 +4,7 @@ const { check, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 //process.env["NODE_CONFIG_DIR"] = __dirname + "../../config";
 const dotenv = require("dotenv");
-dotenv.config();
-console.log(process.env.jwtSecret);
+console.log(dotenv);
 const config = require("config");
 console.log(config.get("jwtSecret"));
 
@@ -66,7 +65,7 @@ router.post(
       };
       jwt.sign(
         payload,
-        process.env.jwtSecret,
+        config.get("jwtSecret"),
         { expiresIn: 360000 }, // Change to 3600 during production
         (err, token) => {
           if (err) throw err;

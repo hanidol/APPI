@@ -6,6 +6,8 @@ const axios = require("axios").default;
 
 const config = require("config");
 console.log(config);
+const dotenv = require("dotenv");
+dotenv.config();
 const normalize = require("normalize-url");
 
 const auth = require("../../middleware/auth");
@@ -318,6 +320,7 @@ router.get("/github/:username", async (req, res) => {
     );
     const headers = {
       "user-agent": "node.js",
+      //Authorization: `token ${config.get("githubToken")}`,
       Authorization: `token ${config.get("githubToken")}`,
     };
     const gitHubResponse = await axios.get(uri, { headers });
