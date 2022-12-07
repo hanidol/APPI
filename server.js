@@ -14,7 +14,7 @@ connectDB();
 // Initialize Middleware
 app.use(express.json({ strict: false }));
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://doctor-alzheimer.onrender.com:3000",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
